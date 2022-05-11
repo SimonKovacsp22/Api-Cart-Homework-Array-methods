@@ -1,0 +1,20 @@
+.card-text {
+    font-size: 20px;
+    font-weight: 700 ;
+}
+
+.cart  {
+    border: 2px solid red;
+    margin-bottom: 50px;
+
+}
+
+.search {
+    justify-content: center;
+    margin-bottom: 75px;
+}
+
+.btn-dark {
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
