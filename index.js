@@ -9,6 +9,8 @@ const loadBooks = async () => {
         const { data: books } = parsedBody
         console.log(books)
         outerArray = [...books]
+        bookToRemoveIdx = books.findIndex(book => book.price === null)
+                books.splice(bookToRemoveIdx, 1)
        renderBooks(books)
        Skip()
        addToCart()
@@ -84,8 +86,14 @@ const addToCart = function () {
 }
 
 const search = function() {
+    console.log(outerArray)
     
     let searchTerm = document.querySelector('input').value
-    let filteredBooks = outerArray.filter(book => book.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    console.log(searchTerm)
+    let filteredBooks = outerArray.filter(book => {
+        
+        console.log(book)
+        return book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    })
     renderBooks(filteredBooks)
 }
